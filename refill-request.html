@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Refill Request</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f7fa;
+    margin:0;
+}
+
+header{
+    background:#0066a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    max-width:700px;
+    margin:30px auto;
+}
+
+.form-box{
+    background:white;
+    padding:25px;
+    border-radius:8px;
+}
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    margin-bottom:20px;
+}
+
+button{
+    width:100%;
+    background:#0066a1;
+    color:white;
+    border:none;
+    padding:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Prescription Refill Request</h1>
+</header>
+
+<div class="container">
+
+<div class="form-box">
+
+<form action="dashboard.html">
+
+<label>Medication</label>
+
+<input
+type="text"
+id="medication"
+readonly>
+
+<label>Delivery Method</label>
+
+<select>
+
+<option>Home Delivery</option>
+
+<option>Pickup at Pharmacy</option>
+
+</select>
+
+<label>Delivery Address</label>
+
+<input
+type="text"
+placeholder="Enter Address">
+
+<label>Phone Number</label>
+
+<input
+type="tel"
+placeholder="Phone Number">
+
+<button type="submit">
+Submit Refill Request
+</button>
+  <label>Prescribing Doctor</label>
+
+<input
+type="text"
+id="doctor"
+readonly>
+
+</form>
+
+</div>
+
+</div>
+
+<script>
+
+const params =
+new URLSearchParams(window.location.search);
+
+const medication =
+params.get("medication");
+
+let doctor = "";
+
+if(medication === "aspirin"){
+    doctor = "Dr. Sarah Johnson";
+}
+else if(medication === "hydrocortisone"){
+    doctor = "Dr. Michael Lee";
+}
+else{
+    doctor = "Dr. Emily Davis";
+}
+
+document.getElementById("medication").value =
+medication;
+
+document.getElementById("doctor").value =
+doctor;
+
+</script>
+
+</body>
+</html>
