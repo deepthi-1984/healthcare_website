@@ -263,6 +263,19 @@ function trackPaymentClick() {
 }
 
 </script>
+    <script>
+window.dataLayer = window.dataLayer || [];
+   dataLayer.push({
+  event: "dashboard_view",
+  member_type: "Gold Plus"
+});
+dataLayer.push({
+  event: "begin_checkout",
+  plan_name: "Gold Plus Plan",
+  value: 400
+});
+
+</script>
 
 </body>
 
