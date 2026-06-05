@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Member Dashboard</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fa;
+        }
+
+        header {
+            background: #0066a1;
+            color: white;
+            padding: 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .welcome-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            color: #0066a1;
+        }
+
+        .card p {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .payment-card {
+            background: #0066a1;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 25px;
+            text-align: center;
+        }
+
+        .payment-btn {
+            display: inline-block;
+            background: white;
+            color: #0066a1;
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .payment-btn:hover {
+            background: #f1f1f1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: #e9ecef;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Healthcare Member Dashboard</h1>
+
+    <nav>
+        <a href="find-doctor.html">Find Doctor</a>
+        <a href="prescriptions.html">Prescriptions</a>
+        <a href="claims-center.html">Claims</a>
+        <a href="insurance-plans.html">Plans</a>
+        <a href="contact-support.html">Support</a>
+    </nav>
+
+</header>
+
+<div class="container">
+
+    <div class="welcome-card">
+
+        <h2>Welcome, John Smith</h2>
+
+        <p>
+            Member ID: UH123456789
+        </p>
+
+        <p>
+            Insurance Plan: Gold Plus Plan
+        </p>
+
+        <p>
+            Coverage Status: Active
+        </p>
+
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+
+            <h2>Upcoming Appointments</h2>
+
+            <ul>
+                <li>
+                    Dr. Sarah Johnson (Cardiology)
+                    <br>
+                    June 15, 2026 - 10:00 AM
+                </li>
+
+                <li>
+                    Dr. Michael Lee (Dermatology)
+                    <br>
+                    July 02, 2026 - 2:00 PM
+                </li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Active Prescriptions</h2>
+
+            <ul>
+                <li>Aspirin 81mg</li>
+                <li>Hydrocortisone Cream 1%</li>
+                <li>Amoxicillin Suspension</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Recent Claims</h2>
+
+            <ul>
+                <li>CLM1001 - Approved</li>
+                <li>CLM1002 - Processing</li>
+                <li>CLM1003 - Pending Review</li>
+            </ul>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Plan Summary</h2>
+
+            <p>
+                Gold Plus Plan
+            </p>
+
+            <p>
+                Monthly Premium: $400
+            </p>
+
+            <p>
+                Annual Deductible: $1,000
+            </p>
+
+            <p>
+                Out-of-Pocket Max: $5,000
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="payment-card">
+
+        <h2>Premium Payment Due</h2>
+
+        <h3>$400.00</h3>
+
+        <p>
+            Due Date: June 30, 2026
+        </p>
+
+        <a
+            href="https://healthcare-payment-portal.netlify.app/payment.html"
+            class="payment-btn"
+            onclick="trackPaymentClick()">
+            Pay Premium Now
+        </a>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p>
+        © 2026 Healthcare Member Portal
+    </p>
+
+</footer>
+
+<script>
+
+window.dataLayer = window.dataLayer || [];
+
+function trackPaymentClick() {
+
+    dataLayer.push({
+        event: "begin_checkout",
+        payment_type: "insurance_premium",
+        premium_amount: 400,
+        plan_name: "Gold Plus Plan"
+    });
+
+    console.log("GA4 Event: begin_checkout");
+
+}
+
+</script>
+
+</body>
+
+</html>
