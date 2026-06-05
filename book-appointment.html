@@ -57,6 +57,9 @@ button{
 </head>
 
 <body>
+<script>
+window.dataLayer = window.dataLayer || [];
+</script>
 
 <header>
 <h1>Book Appointment</h1>
@@ -105,6 +108,16 @@ Proceed to Insurance Verification & Payment
 </div>
 
 </div>
+dataLayer.push({
+  event: "appointment_page_view"
+});
+
+dataLayer.push({
+  event: "appointment_booked",
+  doctor_name: "Dr. Sarah Johnson",
+  specialty: "Cardiology",
+  appointment_date: "2026-06-20"
+});
 
 </body>
 </html>
