@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Claim Details</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f7fa;
+    margin:0;
+}
+
+header{
+    background:#0066a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:30px auto;
+}
+
+.claim-details{
+    background:white;
+    padding:25px;
+    border-radius:8px;
+}
+
+.btn{
+    background:#0066a1;
+    color:white;
+    padding:12px 20px;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Claim Details</h1>
+</header>
+
+<div class="container">
+
+<div id="claimInfo" class="claim-details">
+
+</div>
+
+</div>
+
+<script>
+
+const params =
+new URLSearchParams(window.location.search);
+
+const claim =
+params.get("claim");
+
+let html = "";
+
+if(claim === "CLM1001"){
+
+html = `
+
+<h2>Claim #CLM1001</h2>
+
+<p><b>Provider:</b>
+Ohio Heart & Vascular Center
+</p>
+
+<p><b>Doctor:</b>
+Dr. Sarah Johnson
+</p>
+
+<p><b>Service:</b>
+Cardiology Consultation
+</p>
+
+<p><b>Date of Service:</b>
+May 10, 2026
+</p>
+
+<p><b>Claim Amount:</b>
+$350
+</p>
+
+<p><b>Status:</b>
+Approved
+</p>
+
+<p><b>Member Responsibility:</b>
+$40 Copay
+</p>
+
+<a href="login.html?claim=CLM1001"
+class="btn">
+Login To View Explanation of Benefits
+</a>
+
+`;
+
+}
+
+else if(claim === "CLM1002"){
+
+html = `
+
+<h2>Claim #CLM1002</h2>
+
+<p><b>Provider:</b>
+Central Dermatology Clinic
+</p>
+
+<p><b>Doctor:</b>
+Dr. Michael Lee
+</p>
+
+<p><b>Service:</b>
+Skin Examination
+</p>
+
+<p><b>Date of Service:</b>
+May 15, 2026
+</p>
+
+<p><b>Claim Amount:</b>
+$220
+</p>
+
+<p><b>Status:</b>
+Processing
+</p>
+
+<a href="login.html?claim=CLM1002"
+class="btn">
+Login To View Claim
+</a>
+
+`;
+
+}
+
+else{
+
+html = `
+
+<h2>Claim #CLM1003</h2>
+
+<p><b>Provider:</b>
+Children's Medical Center
+</p>
+
+<p><b>Doctor:</b>
+Dr. Emily Davis
+</p>
+
+<p><b>Service:</b>
+Pediatric Wellness Visit
+</p>
+
+<p><b>Date of Service:</b>
+May 22, 2026
+</p>
+
+<p><b>Claim Amount:</b>
+$180
+</p>
+
+<p><b>Status:</b>
+Pending Review
+</p>
+
+<a href="login.html?claim=CLM1003"
+class="btn">
+Login To View Claim
+</a>
+
+`;
+
+}
+
+document.getElementById("claimInfo").innerHTML = html;
+
+</script>
+
+</body>
+</html>
