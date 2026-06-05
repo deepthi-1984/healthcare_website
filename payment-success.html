@@ -98,6 +98,17 @@ document.getElementById("paymentAmount")
 "Amount Paid: $" + amount;
 
 </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+   dataLayer.push({
+  event: "purchase",
+  transaction_id: "TXN1749158123456",
+  value: 400,
+  currency: "USD",
+  policy_number: "POL123456",
+  plan_name: "Gold Plus Plan"
+});
 
+</script>
 </body>
 </html>
