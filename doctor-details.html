@@ -9,17 +9,135 @@
 </head>
 <body>
 <header><h1>Doctor Details</h1>
-<nav>
-<a href="index.html">Home</a>
-<a href="find-doctor.html">Find Doctor</a>
-<a href="prescriptions.html">Prescriptions</a>
-<a href="insurance-plans.html">Plans</a>
-<a href="claims-center.html">Claims</a>
-<a href="login.html">Login</a>
-<a href="payment.html">Payment</a>
-<a href="contact-support.html">Support</a>
-  <p>Sample healthcare portal page for Doctor Details.</p>
-</nav>
+<div id="doctorProfile"></div>
+
+<script>
+
+const params =
+    new URLSearchParams(window.location.search);
+
+const doctor =
+    params.get("doctor");
+
+let html = "";
+
+if(doctor === "cardiology"){
+
+html = `
+
+<h2>Dr. Sarah Johnson, MD</h2>
+
+<p><b>Specialty:</b> Cardiology</p>
+
+<p><b>Experience:</b> 15 Years</p>
+
+<p><b>Education:</b></p>
+
+<ul>
+<li>MD - Harvard Medical School</li>
+<li>Cardiology Fellowship - Cleveland Clinic</li>
+</ul>
+
+<p><b>Certifications:</b></p>
+
+<ul>
+<li>Board Certified Cardiologist</li>
+<li>ACLS Certified</li>
+</ul>
+
+<p><b>Responsibilities:</b></p>
+
+<ul>
+<li>Heart Disease Diagnosis</li>
+<li>Cardiac Imaging Review</li>
+<li>Treatment Planning</li>
+<li>Preventive Care</li>
+</ul>
+
+<a href="book-appointment.html">
+<button>
+Book Appointment
+</button>
+</a>
+
+`;
+
+}
+
+else if(doctor === "dermatology"){
+
+html = `
+
+<h2>Dr. Michael Lee, MD</h2>
+
+<p><b>Specialty:</b> Dermatology</p>
+
+<p><b>Experience:</b> 12 Years</p>
+
+<p><b>Education:</b></p>
+
+<ul>
+<li>MD - Johns Hopkins University</li>
+<li>Dermatology Residency - Mayo Clinic</li>
+</ul>
+
+<p><b>Responsibilities:</b></p>
+
+<ul>
+<li>Skin Disease Treatment</li>
+<li>Cosmetic Procedures</li>
+<li>Skin Cancer Screening</li>
+</ul>
+
+<a href="book-appointment.html">
+<button>
+Book Appointment
+</button>
+</a>
+
+`;
+
+}
+
+else if(doctor === "pediatrics"){
+
+html = `
+
+<h2>Dr. Emily Davis, MD</h2>
+
+<p><b>Specialty:</b> Pediatrics</p>
+
+<p><b>Experience:</b> 10 Years</p>
+
+<p><b>Education:</b></p>
+
+<ul>
+<li>MD - University of Michigan</li>
+<li>Pediatric Residency - Nationwide Children's Hospital</li>
+</ul>
+
+<p><b>Responsibilities:</b></p>
+
+<ul>
+<li>Child Wellness Exams</li>
+<li>Vaccinations</li>
+<li>Growth Monitoring</li>
+</ul>
+
+<a href="book-appointment.html">
+<button>
+Book Appointment
+</button>
+</a>
+
+`;
+
+}
+
+document.getElementById("doctorProfile").innerHTML =
+    html;
+
+</script>
 </header>
 </body>
 </html>
