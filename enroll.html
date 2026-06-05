@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Enroll in Plan</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f7fa;
+    margin:0;
+}
+
+header{
+    background:#0066a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    max-width:700px;
+    margin:30px auto;
+}
+
+.form-box{
+    background:white;
+    padding:25px;
+    border-radius:8px;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    margin-bottom:20px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    background:#0066a1;
+    color:white;
+    border:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Plan Enrollment</h1>
+</header>
+
+<div class="container">
+
+<div class="form-box">
+
+<form action="login.html">
+
+<label>Selected Plan</label>
+
+<input
+type="text"
+id="selectedPlan"
+readonly>
+
+<label>First Name</label>
+<input type="text" required>
+
+<label>Last Name</label>
+<input type="text" required>
+
+<label>Email</label>
+<input type="email" required>
+
+<label>Phone Number</label>
+<input type="tel" required>
+
+<button type="submit">
+Continue Enrollment
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<script>
+
+const params =
+new URLSearchParams(window.location.search);
+
+const plan =
+params.get("plan");
+
+document.getElementById("selectedPlan").value =
+plan;
+
+</script>
+
+</body>
+</html>
