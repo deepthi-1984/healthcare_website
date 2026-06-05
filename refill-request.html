@@ -134,6 +134,17 @@ document.getElementById("doctor").value =
 doctor;
 
 </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+   dataLayer.push({
+  event: "refill_page_view"
+});
+dataLayer.push({
+  event: "refill_request_submit",
+  medication_name: "Aspirin 81mg",
+  delivery_method: "Home Delivery"
+});
 
+</script>
 </body>
 </html>
