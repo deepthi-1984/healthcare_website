@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Prescription Details</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f7fa;
+    margin:0;
+}
+
+header{
+    background:#0066a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:30px auto;
+}
+
+.details{
+    background:white;
+    padding:25px;
+    border-radius:8px;
+}
+
+.btn{
+    background:#0066a1;
+    color:white;
+    padding:12px 20px;
+    text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Prescription Details</h1>
+</header>
+
+<div class="container">
+
+<div id="prescriptionInfo" class="details">
+
+</div>
+
+</div>
+
+<script>
+const params =
+new URLSearchParams(window.location.search);
+
+const medication =
+params.get("medication");
+
+let html = "";
+
+if(medication === "aspirin"){
+
+html = `
+
+<h2>Aspirin 81mg</h2>
+
+<p><b>Prescribing Doctor:</b>
+Dr. Sarah Johnson
+</p>
+
+<p><b>Specialty:</b>
+Cardiology
+</p>
+
+<p><b>Dosage:</b>
+1 Tablet Daily
+</p>
+
+<p><b>Purpose:</b>
+Heart Health & Blood Clot Prevention
+</p>
+
+<p><b>Refills Remaining:</b>
+3
+</p>
+
+<p><b>Last Filled:</b>
+May 15, 2026
+</p>
+
+<h3>Doctor Qualifications</h3>
+
+<ul>
+<li>MD - Harvard Medical School</li>
+<li>Cardiology Fellowship - Cleveland Clinic</li>
+<li>15 Years Experience</li>
+</ul>
+
+<a href="refill-request.html?medication=aspirin"
+class="btn">
+Request Refill
+</a>
+
+`;
+
+}
+
+else if(medication === "hydrocortisone"){
+
+html = `
+
+<h2>Hydrocortisone Cream 1%</h2>
+
+<p><b>Prescribing Doctor:</b>
+Dr. Michael Lee
+</p>
+
+<p><b>Specialty:</b>
+Dermatology
+</p>
+
+<p><b>Dosage:</b>
+Apply Twice Daily
+</p>
+
+<p><b>Purpose:</b>
+Skin Rash & Eczema Treatment
+</p>
+
+<p><b>Refills Remaining:</b>
+2
+</p>
+
+<p><b>Last Filled:</b>
+May 22, 2026
+</p>
+
+<h3>Doctor Qualifications</h3>
+
+<ul>
+<li>MD - Johns Hopkins University</li>
+<li>Dermatology Residency - Mayo Clinic</li>
+<li>12 Years Experience</li>
+</ul>
+
+<a href="refill-request.html?medication=hydrocortisone"
+class="btn">
+Request Refill
+</a>
+
+`;
+
+}
+
+else if(medication === "amoxicillin"){
+
+html = `
+
+<h2>Amoxicillin Suspension</h2>
+
+<p><b>Prescribing Doctor:</b>
+Dr. Emily Davis
+</p>
+
+<p><b>Specialty:</b>
+Pediatrics
+</p>
+
+<p><b>Dosage:</b>
+5 mL Twice Daily
+</p>
+
+<p><b>Purpose:</b>
+Bacterial Infection Treatment
+</p>
+
+<p><b>Refills Remaining:</b>
+1
+</p>
+
+<p><b>Last Filled:</b>
+May 25, 2026
+</p>
+
+<h3>Doctor Qualifications</h3>
+
+<ul>
+<li>MD - University of Michigan</li>
+<li>Pediatric Residency - Nationwide Children's Hospital</li>
+<li>10 Years Experience</li>
+</ul>
+
+<a href="refill-request.html?medication=amoxicillin"
+class="btn">
+Request Refill
+</a>
+
+`;
+
+}
+
+document.getElementById("prescriptionInfo").innerHTML =
+html;
+</script>
+</body>
+</html>
