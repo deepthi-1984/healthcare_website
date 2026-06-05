@@ -192,6 +192,21 @@ Login To View Claim
 document.getElementById("claimInfo").innerHTML = html;
 
 </script>
+<script>
+window.dataLayer = window.dataLayer || [];
+    dataLayer.push({
+  event: "claim_detail_view",
+  claim_id: "CLM1001",
+  claim_status: "Approved"
+});
+Login Click
+dataLayer.push({
+  event: "claim_login_start",
+  claim_id: "CLM1001"
+});
+
+</script>
+    
 
 </body>
 </html>
