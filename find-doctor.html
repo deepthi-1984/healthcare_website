@@ -72,14 +72,28 @@ a{
 
 <input type="text" placeholder="Search by Doctor Name">
 
-<select>
-<option>Select Specialty</option>
-<option>Cardiology</option>
-<option>Dermatology</option>
-<option>Neurology</option>
-<option>Pediatrics</option>
-<option>Orthopedics</option>
+<select id="specialty">
+
+    <option value="">Select Specialty</option>
+
+    <option value="cardiology">
+        Cardiology
+    </option>
+
+    <option value="dermatology">
+        Dermatology
+    </option>
+
+    <option value="pediatrics">
+        Pediatrics
+    </option>
+
 </select>
+
+<button onclick="findDoctor()">
+    Search
+</button>
+
 
 <input type="text" placeholder="ZIP Code">
 
@@ -87,29 +101,43 @@ a{
 
 </div>
 
-<div class="doctor-card">
-<h3>Dr. Sarah Johnson</h3>
-<p><strong>Specialty:</strong> Cardiology</p>
-<p><strong>Experience:</strong> 15 Years</p>
-<p><strong>Location:</strong> Columbus, OH</p>
-<a href="doctor-details.html" class="btn">View Profile</a>
-</div>
+<script>
 
-<div class="doctor-card">
-<h3>Dr. Michael Lee</h3>
-<p><strong>Specialty:</strong> Dermatology</p>
-<p><strong>Experience:</strong> 12 Years</p>
-<p><strong>Location:</strong> Dublin, OH</p>
-<a href="doctor-details.html" class="btn">View Profile</a>
-</div>
+function findDoctor(){
 
-<div class="doctor-card">
-<h3>Dr. Emily Davis</h3>
-<p><strong>Specialty:</strong> Pediatrics</p>
-<p><strong>Experience:</strong> 10 Years</p>
-<p><strong>Location:</strong> Powell, OH</p>
-<a href="doctor-details.html" class="btn">View Profile</a>
-</div>
+    const specialty =
+        document.getElementById("specialty").value;
+
+    if(specialty === "cardiology"){
+
+        window.location.href =
+            "doctor-details.html?doctor=cardiology";
+
+    }
+
+    else if(specialty === "dermatology"){
+
+        window.location.href =
+            "doctor-details.html?doctor=dermatology";
+
+    }
+
+    else if(specialty === "pediatrics"){
+
+        window.location.href =
+            "doctor-details.html?doctor=pediatrics";
+
+    }
+
+    else{
+
+        alert("Please select a specialty");
+
+    }
+
+}
+
+</script>
 
 </div>
 
