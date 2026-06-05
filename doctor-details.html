@@ -138,6 +138,20 @@ document.getElementById("doctorProfile").innerHTML =
     html;
 
 </script>
+     <script>
+window.dataLayer = window.dataLayer || [];
+   dataLayer.push({
+  event: "doctor_profile_view",
+  doctor_name: "Dr. Sarah Johnson",
+  specialty: "Cardiology"
+});
+dataLayer.push({
+  event: "appointment_start",
+  doctor_name: "Dr. Sarah Johnson"
+});
+
+
+</script>
 </header>
 </body>
 </html>
