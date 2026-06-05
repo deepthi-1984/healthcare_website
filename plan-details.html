@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Plan Details</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f7fa;
+    margin:0;
+}
+
+header{
+    background:#0066a1;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:30px auto;
+}
+
+.details{
+    background:white;
+    padding:30px;
+    border-radius:8px;
+}
+
+.btn{
+    background:#0066a1;
+    color:white;
+    padding:12px 20px;
+    text-decoration:none;
+    display:inline-block;
+    margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Insurance Plan Details</h1>
+</header>
+
+<div class="container">
+
+<div id="planInfo" class="details">
+
+</div>
+
+</div>
+
+<script>
+
+const params =
+new URLSearchParams(window.location.search);
+
+const plan =
+params.get("plan");
+
+let html = "";
+
+if(plan === "silver"){
+
+html = `
+
+<h2>Silver Care Plan</h2>
+
+<p><strong>Monthly Premium:</strong> $250</p>
+
+<p><strong>Annual Deductible:</strong> $2,000</p>
+
+<p><strong>Primary Care Visit:</strong> $30 Copay</p>
+
+<p><strong>Specialist Visit:</strong> $60 Copay</p>
+
+<p><strong>Prescription Coverage:</strong> Included</p>
+
+<p><strong>Out-of-Pocket Maximum:</strong> $7,500</p>
+
+<h3>Benefits</h3>
+
+<ul>
+<li>Preventive Care</li>
+<li>Doctor Visits</li>
+<li>Emergency Care</li>
+<li>Prescription Drugs</li>
+</ul>
+
+<a href="enroll.html?plan=Silver Care Plan"
+class="btn">
+Enroll Now
+</a>
+
+`;
+
+}
+
+else if(plan === "gold"){
+
+html = `
+
+<h2>Gold Plus Plan</h2>
+
+<p><strong>Monthly Premium:</strong> $400</p>
+
+<p><strong>Annual Deductible:</strong> $1,000</p>
+
+<p><strong>Primary Care Visit:</strong> $20 Copay</p>
+
+<p><strong>Specialist Visit:</strong> $40 Copay</p>
+
+<p><strong>Prescription Coverage:</strong> Enhanced</p>
+
+<p><strong>Out-of-Pocket Maximum:</strong> $5,000</p>
+
+<h3>Benefits</h3>
+
+<ul>
+<li>Preventive Care</li>
+<li>Specialist Coverage</li>
+<li>Maternity Care</li>
+<li>Mental Health Services</li>
+<li>Prescription Drugs</li>
+</ul>
+
+<a href="enroll.html?plan=Gold Plus Plan"
+class="btn">
+Enroll Now
+</a>
+
+`;
+
+}
+
+else{
+
+html = `
+
+<h2>Platinum Premium Plan</h2>
+
+<p><strong>Monthly Premium:</strong> $600</p>
+
+<p><strong>Annual Deductible:</strong> $500</p>
+
+<p><strong>Primary Care Visit:</strong> $10 Copay</p>
+
+<p><strong>Specialist Visit:</strong> $20 Copay</p>
+
+<p><strong>Prescription Coverage:</strong> Premium</p>
+
+<p><strong>Out-of-Pocket Maximum:</strong> $3,000</p>
+
+<h3>Benefits</h3>
+
+<ul>
+<li>Comprehensive Medical Coverage</li>
+<li>Specialist Care</li>
+<li>Virtual Visits</li>
+<li>Mental Health</li>
+<li>Dental & Vision</li>
+<li>Prescription Drugs</li>
+</ul>
+
+<a href="enroll.html?plan=Platinum Premium Plan"
+class="btn">
+Enroll Now
+</a>
+
+`;
+
+}
+
+document.getElementById("planInfo").innerHTML =
+html;
+
+</script>
+
+</body>
+</html>
