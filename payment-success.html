@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Payment Successful</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:#f4f7fa;
+}
+
+.container{
+    width:700px;
+    margin:auto;
+    margin-top:50px;
+}
+
+.success-box{
+    background:white;
+    padding:40px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.success{
+    color:green;
+    font-size:32px;
+}
+
+.btn{
+    display:inline-block;
+    background:#0066a1;
+    color:white;
+    text-decoration:none;
+    padding:12px 20px;
+    margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="success-box">
+
+<h1 class="success">
+✓ Payment Successful
+</h1>
+
+<h2 id="transactionId"></h2>
+
+<p id="policyNumber"></p>
+
+<p id="paymentAmount"></p>
+
+<p>
+Thank you for your payment.
+Your insurance coverage remains active.
+</p>
+
+<a href="contact-support.html" class="btn">
+Contact Support
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+const params =
+new URLSearchParams(window.location.search);
+
+const txn =
+params.get("txn");
+
+const amount =
+params.get("amount");
+
+const policy =
+params.get("policy");
+
+document.getElementById("transactionId")
+.innerHTML =
+"Transaction ID: " + txn;
+
+document.getElementById("policyNumber")
+.innerHTML =
+"Policy Number: " + policy;
+
+document.getElementById("paymentAmount")
+.innerHTML =
+"Amount Paid: $" + amount;
+
+</script>
+
+</body>
+</html>
