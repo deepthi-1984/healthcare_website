@@ -79,7 +79,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <h2>Appointment Request Form</h2>
 
-<form action="payment.html">
+<form id="appointmentForm">
+<form action="insurance-plans.html">
 
 <label>Patient Full Name</label>
 <input type="text" required>
@@ -116,17 +117,22 @@ Proceed to Insurance Verification & Payment
 </div>
 
 </div>
-    <script>
-window.dataLayer = window.dataLayer || [];
-    dataLayer.push({
-  event: "appointment_page_view"
-});
+<script>
 
-dataLayer.push({
-  event: "appointment_booked",
-  doctor_name: "Dr. Sarah Johnson",
-  specialty: "Cardiology",
-  appointment_date: "2026-06-20"
+document.getElementById("appointmentForm")
+.addEventListener("submit", function(e){
+
+    e.preventDefault();
+
+    dataLayer.push({
+        event: "appointment_booked",
+        doctor_name: document.querySelector("select").value,
+        speciality: document.querySelector("select").value,
+        appointment_date: document.querySelector('input[type="date"]').value
+    });
+
+    window.location.href = "insurance-plans.html";
+
 });
 
 </script>
